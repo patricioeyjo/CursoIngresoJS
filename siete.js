@@ -22,7 +22,13 @@ function Mostrar()
 	var contadorMenoresDeEdad=0;
 	var contadorDeMujeres=0;
 	var contadorDeHombres=0;
+	var nombreMayor;
+	var nombreMenor;
 	var NombreDelHombreMayor;
+	var mayorEdad=0;
+	var menorEdad=0;
+	var flag=0;
+
 	while(contador<3)
 	{
 		
@@ -58,11 +64,26 @@ function Mostrar()
 							{
 								contadorDeHombres++;
 							}
+							if(edad > mayorEdad || flag == 0)
+								{
+									mayorEdad=edad;
+									nombreMenor=nombre;
+									flag=1;
+								}
+								if(edad < menorEdad || flag == 0)
+									{
+										menorEdad=edad;
+										nombreMayor=nombre;
+										flag=1;
+									}
 
 	}		
 	document.write("<br> la cantidad de mayores es: "+contadorMayoresDeEdad);
 	document.write("<br> la cantidad de menores es: "+contadorMenoresDeEdad);
 	document.write("<br> la cantidad de mujeres es: "+contadorDeMujeres);
 	document.write("<br> la cantidad de hombres es: "+contadorDeHombres);
+	document.write("<br> el nombre del mayor es: "+nombreMayor);
+	document.write("<br> el nombre del menor es: "+nombreMenor);
+	
 
 }
